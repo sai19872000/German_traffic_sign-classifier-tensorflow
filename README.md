@@ -1,10 +1,5 @@
-**Traffic Sign Recognition** 
 
-##Writeup
-
----
-
-**Build a Traffic Sign Recognition Project**
+# Build a Traffic Sign Recognition Project
 
 The goals / steps of this project are the following:
 * Load the data set (see below for links to the project data set)
@@ -12,7 +7,6 @@ The goals / steps of this project are the following:
 * Design, train and test a model architecture
 * Use the model to make predictions on new images
 * Analyze the softmax probabilities of the new images
-* Summarize the results with a written report
 
 
 [//]: # (Image References)
@@ -27,19 +21,14 @@ The goals / steps of this project are the following:
 [image8]: ./examples/probs.png "probs"
 [image9]: ./examples/confusion_mat.png "confusion matrix"
 
-## Rubric Points
-###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
+README
 
----
-###Writeup / README
-
-####1. Here is the ipython notebook for my project [project code](https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb)
+####1. Here is the ipython notebook for my project [project code](https://github.com/sai19872000/Traffic_sign_classifier)
 
 
 ###Data Set Summary & Exploration
 
-####1. Initially I load the pickled data set that is given to us. I used the pickle library to load the data sets. The dataset contains traning file, validation file and the testing file. In the next section I used the numpy libraries shape command to get information about the number of training examples, shape of the image, etc.. I have answered all the question asked in that cell I have provided the answers below for convinience 
-
+####1. Initially I load the pickled data set that is given to us. I used the pickle library to load the data sets. The dataset contains traning file, validation file and the testing file. In the next section I used the numpy libraries shape command to get information about the number of training examples, shape of the image, etc.. 
 
 * The size of training set is 344799
 * The size of the validation set is 4410
@@ -57,7 +46,7 @@ This histogram shows uneven distribution. Later I have used image processing to 
 
 ###Design and Test a Model Architecture
 
-####1. With the LeNet-5 solution from the lecture, I achived a validation set accuracy of about 0.9. But for this project the accurary needs to be atleast 0.93. For this reason I have tried several different things. Here I will explain the steps I have taken to improve the model validation accurary.
+####1. With the LeNet-5 architecture, I achived a validation set accuracy of about 0.9. I have tried several different things to imporve the model performence. Here I will explain the steps I have taken to improve the model validation accurary.
 
 I have used a grid search of parameters for each of implementation
 
@@ -214,7 +203,7 @@ I have used the sklearn library to make confusion matrix and the classification 
 These results prove that the this model architecture does a great job in classifying traffic signs.
 Since my model architecture is fixed I used grid search (of hyperparmeters) for each of the data processing step. For example I did a grid seach(hyper parameters) of RGB images then I converted the images to grayscale and performed the grid search again to check for model performance. I then created additional data to balance the training set and did the grid search again to check for improvement. Finally I changed the model architecture and performed the grid search (hyperparameters) and saw great improvement in the validation accurary. Adding the dropout layers (80%) imporved the test accuracy from 0.92 to 0.93 % also helped not to overfit the training dataset. The model architecture never over fitted or under fitted the data as the testing and validation accuries were always close together. The pooling layers in the network helps the model not to overfit the training data.
 
-More careful image processing and network tweeking will result in validation accuracies upto 99% but I guess for this project I have proved the point and answered all the questions so I stoped at this point.
+More careful image processing and network tweeking will result in validation accuracies upto 99%
 
 ###Test a Model on New Images
 
@@ -254,3 +243,5 @@ For the first image, the model is relatively sure that this is a stop sign (prob
 I have made bar plot where the y axis is the softmax probability and the x axis contains labels for the corresponding top 5 probabilities.
 
 ![alt text][image8]
+
+
